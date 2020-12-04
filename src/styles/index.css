@@ -53,68 +53,81 @@ body {
 .home-page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: calc(100vh - 4rem);
 }
 
+.home-page > div {
+  width: 50vw;
+  height: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.home-page > div:first-child {
+  justify-content: flex-end;
+}
+
 #projects-button, #contact-button {
+  position: relative;
   width: 300px;
-  height: 50vh;
+  height: 30vh;
   background: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
-  position: relative;
-  color: var(--bg-main-color);
-}
-
-.link {
-  color: var(--bg-main-color);
+  /* background: rgb(188, 114, 206); */
+  transition: all 200ms ease-out;
 }
 
 #projects-button {
   margin-right: 1rem;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  background-image: linear-gradient(120deg, var(--link-color), rgb(200,200,200) 50%, var(--link-color) 80%);
 }
 
 #contact-button {
   margin-left: 1rem;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  background-image: linear-gradient(120deg, rgb(219, 140, 217) 80%, rgb(188, 114, 206));
 }
 
 #projects-button::after, #contact-button::before {
   content: '';
   position: absolute;
-  top: 0;
-  width: 0px;
   background: transparent;
 }
 
 #projects-button::after {
   right: -20px;
-  border-top: 25vh solid var(--secondary-color);
-  border-left: 10px solid var(--secondary-color);
+  /* border-top: 15vh solid var(--secondary-color);
+  border-left: 10px solid var(--secondary-color); */
+  border-top: 15vh solid var(--link-color);
+  border-left: 10px solid var(--link-color);
   border-right: 10px solid transparent;
-  border-bottom: 25vh solid transparent;
+  border-bottom: 15vh solid transparent;
 }
 
 #contact-button::before {
   left: -20px;
-  border-bottom: 25vh solid var(--secondary-color);
-  border-right: 10px solid var(--secondary-color);
+  border-bottom: 15vh solid rgb(219, 140, 217);
+  border-right: 10px solid rgb(219, 140, 217);
   border-left: 10px solid transparent;
-  border-top: 25vh solid transparent;
+  border-top: 15vh solid transparent;
 }
 
 #projects-button:hover {
-  margin-right: 5rem;
+  margin-right: 1.5rem;
+  height: 35vh;
 }
 
 #contact-button:hover {
-  margin-left: 5rem;
+  margin-left: 1.5rem;
+  height: 35vh;
 }
 
 .footer {
