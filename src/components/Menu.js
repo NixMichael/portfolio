@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Menu = () => {
 	return (
 		<div className='menu'>
-			<Link className='menu-item' to='/'>HOME</Link>
-			<Link className='menu-item' to='/projects'>PROJECTS</Link>
-			<Link className='menu-item' to='/contact'>CONTACT</Link>
+			<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
+			<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
+			<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
 		</div>
 	)
 }
