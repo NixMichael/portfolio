@@ -30,25 +30,22 @@ h1, h2 {
   color: black;
 }
 
-a {
+.project-container a {
+  padding: 0.5rem 1rem;
   text-decoration: none;
+  transition: padding 200ms ease-in;
+}
+
+.project-container a:hover {
+  background: orange;
+  padding: 3rem 0;
+  /* background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1)); */
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   justify-content: flex-end;
-}
-
-.scroller-bar {
-  position: fixed;
-  top: 0;
-  left: 237px;
-  width: 20px;
-  height: 36px;
-  background: var(--highlight-color);
-  z-index: 10;
-  clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
 }
 
 .main-content {
@@ -65,23 +62,32 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0 5rem;
 }
 
 .projects .project-container {
   display: grid;
-  grid-template-columns: 1fr 100px;
-  grid-template-areas: 'PREVIEW LIVE' 'PREVIEW CODE';
-  margin-bottom: 2rem;
+  grid-template-columns: 50vw 10vw;
+  grid-template-areas: 'HEADING HEADING' 'PREVIEW LIVE' 'PREVIEW CODE';
+  margin: 2rem 0;
 }
 
 .projects a {
   color: black;
 }
 
+.project-container h3 {
+  grid-area: HEADING;
+  color: black;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
 .preview {
   grid-area: PREVIEW;
+  display: flex;
+  justify-content: center;
   padding: 2rem;
-  margin-right: 1rem;
   background: rgba(0,0,0,0.1);
 }
 
@@ -92,17 +98,29 @@ a {
 .live {
   grid-area: LIVE;
   display: flex;
-  align-items: flex-end;
-  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
 }
 
 .code {
   grid-area: CODE;
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
-@media screen and (min-width: 750px) {
+.live a, .code a {
+  padding: 0;
+  margin: 0;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
   .header {
     position: fixed;
     top: 0;
@@ -154,6 +172,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     background: var(--bg-main-color);
   }
 
@@ -191,6 +210,17 @@ a {
     color: var(--highlight-color);
   }
 
+  .scroller-bar {
+    position: fixed;
+    top: 0;
+    left: 237px;
+    width: 20px;
+    height: 36px;
+    background: var(--highlight-color);
+    z-index: 10;
+    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+  }
+
 }
 
 @media screen and (min-width: 2600px) {
@@ -203,7 +233,7 @@ a {
   }
 
   .header {
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
 
   .menu {
@@ -217,5 +247,9 @@ a {
 
   .menu .menu-item {
     font-size: 3.5rem;
+  }
+
+  .projects {
+    padding: 0 0 0 10rem;
   }
 }
