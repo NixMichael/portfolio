@@ -37,7 +37,7 @@ h1, h2 {
 }
 
 .project-container a:hover {
-  background: orange;
+  background: var(--highlight-color);
   padding: 3rem 0;
   /* background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1)); */
 }
@@ -57,19 +57,12 @@ h1, h2 {
   align-items: center;
 }
 
-.projects {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 0 5rem;
-}
-
 .projects .project-container {
   display: grid;
   grid-template-columns: 50vw 10vw;
   grid-template-areas: 'HEADING HEADING' 'PREVIEW LIVE' 'PREVIEW CODE';
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
+  height: 500px;
 }
 
 .projects a {
@@ -120,16 +113,53 @@ h1, h2 {
   align-items: center;
 }
 
+.fade-in {
+  transform: translateX(50vw);
+  display: grid;
+  grid-template-columns: 50vw 10vw;
+  grid-template-rows: 2rem auto;
+  grid-template-areas: 'HEADING HEADING' 'PREVIEW LIVE' 'PREVIEW CODE';
+  margin: 2rem 0;
+  opacity: 0;
+  transition: transform 450ms ease-in, opacity 250ms ease-in;
+}
+
+.fade-in:last-child {
+  margin-bottom: 4rem;
+}
+
+.fade-in h3 {
+  color: black;
+}
+
+.prv {
+  grid-area: PREVIEW;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.1);
+}
+
+.prv img {
+  max-width: 100%;
+}
+
+.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 @media screen and (min-width: 1000px) {
   .header {
     position: fixed;
     top: 0;
     width: 100vw;
     height: 7rem;
-    background-image: linear-gradient(to bottom, white, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.1) 90%);
+    background-image: linear-gradient(to bottom, white, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.1) 90%);
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    z-index: 1;
   }
 
   .header .links {
@@ -140,22 +170,8 @@ h1, h2 {
     align-items: center;
     background: var(--bg-main-color);
     position: relative;
-    z-index: 0;
     clip-path: polygon(2.5% 0, 100% 0, 100% 100%, 0 100%);
   }
-
-  /* .header .links::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -20px;
-    border-top: 26px solid rgba(0,0,0,0);
-    border-left: 10px solid rgba(0,0,0,0);
-    border-right: 10px solid var(--bg-main-color);
-    border-bottom: 26px solid var(--bg-main-color);
-    z-index: 1;
-    background: white;
-  } */
 
   .header .links span, .header .links img {
     margin-right: 1rem;
@@ -163,46 +179,48 @@ h1, h2 {
 
   .menu {
     position: fixed;
-    top: 0;
+    transform: rotate(7deg);
+    top: -25px;
     bottom: 0;
     left: 3rem;
     width: 150px;
-    height: 50vh;
-    z-index: 1;
+    height: calc(100vh + 25px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    padding-bottom: 40vh;
     background: var(--bg-main-color);
+    z-index: 2;
   }
 
   .menu::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -4rem;
+    right: 95%;
     height: 100vh;
-    width: 5rem;
+    width: 200%;
     background: var(--bg-main-color);
   }
 
-  .menu::after {
+ .menu::after {
     content: '';
     position: absolute;
     left: 0;
-    top: -10%;
-    height: 110vh;
+    bottom: -20px;
+    height: 60px;
     width: 100%;
     background: var(--bg-main-color);
-    z-index: 2;
-    transform: rotate(8deg);
+    transform: rotate(-8deg);
   }
 
   .menu .menu-item {
     position: relative;
+    transform: rotate(-7deg);
     z-index: 3;
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 1rem 2rem 2rem 0rem;
     text-decoration: none;
   }
 
@@ -211,14 +229,14 @@ h1, h2 {
   }
 
   .scroller-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 237px;
+    right: -20px;
     width: 20px;
-    height: 36px;
+    height: 45px;
     background: var(--highlight-color);
-    z-index: 10;
-    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+    border-left: 2px solid white;
+    clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
   }
 
 }
@@ -240,10 +258,10 @@ h1, h2 {
     width: 250px;
     left: 5rem;
   }
-
+/* 
   .menu::before {
     left: -5rem;
-  }
+  } */
 
   .menu .menu-item {
     font-size: 3.5rem;

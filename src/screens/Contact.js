@@ -1,11 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Contact = () => {
-    return (
-        <div>
-            Contact Me
-        </div>
-    )
+	return (
+		<div></div>
+	)
 }
 
 export default Contact
