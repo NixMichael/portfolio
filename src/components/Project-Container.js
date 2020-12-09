@@ -6,7 +6,7 @@ import RecordKeeper from '../assets/site-examples/recordkeeper/record-keeper-01.
 const ProjectContainer = () => {
 
 	useEffect(() => {
-		const faders = document.querySelectorAll('.fade-in')
+		const faders = document.querySelectorAll('.fader')
 		const appearOptions = {
 			threshold: 0,
 			rootMargin: "-250px"
@@ -30,8 +30,11 @@ const ProjectContainer = () => {
 	
 	return (
 		<div>
-			<div className='fade-in'>
-				<h3>GREEN OIL</h3>
+			<div className='project-container'>
+				<div className='project-description'>
+					<h3>GREEN OIL</h3>
+					<p>New e-commerce website for an eco focused bicycle oil company.</p>
+				</div>
 				<div className='prv'>
 					<img src={GreenOil} alt='React Project' />
 				</div>
@@ -39,8 +42,11 @@ const ProjectContainer = () => {
 				<a target='_blank' className='code' href='https://github.com/c0llid3r/green-oil'>View Code</a>
 			</div>
 
-			<div className='fade-in'>
-				<h3>RECORD KEEPER</h3>
+			<div className='project-container fader'>
+				<div>
+					<h3>RECORD KEEPER</h3>
+					<p>A database system for a Clinical Photography department</p>
+				</div>
 				<div className='prv'>
 					<img src={RecordKeeper} alt='React Project' />
 				</div>
@@ -48,8 +54,11 @@ const ProjectContainer = () => {
 				<a target='_blank' className='code' href='https://github.com/c0llid3r/recordkeeper'>View Code</a>
 			</div>
 
-			<div className='fade-in'>
-				<h3>MACA</h3>
+			<div className='project-container fader'>
+				<div>
+					<h3>MACA</h3>
+					<p>A new website for Manchester Animal Climate Action.</p>
+				</div>
 				<div className='prv'>
 					<img src={MACA} alt='React Project' />
 				</div>

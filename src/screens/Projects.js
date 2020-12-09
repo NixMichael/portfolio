@@ -6,6 +6,9 @@ const Projects = () => {
     return (
       <div className='projects'>
 				<ProjectContainer />
+        <div className='text-center'>
+          <h4>Back to the top</h4>
+        </div>
       </div>
     )
 }

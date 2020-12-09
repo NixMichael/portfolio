@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--font-color);
 }
 
 body {
@@ -23,6 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: white;
+  color: black;
   font-family: 'Sulphur Point', sans-serif;
 }
 
@@ -30,17 +30,6 @@ h1, h2 {
   color: black;
 }
 
-.project-container a {
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  transition: padding 200ms ease-in;
-}
-
-.project-container a:hover {
-  background: var(--highlight-color);
-  padding: 3rem 0;
-  /* background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1)); */
-}
 
 .App {
   min-height: 100vh;
@@ -57,23 +46,8 @@ h1, h2 {
   align-items: center;
 }
 
-.projects .project-container {
-  display: grid;
-  grid-template-columns: 50vw 10vw;
-  grid-template-areas: 'HEADING HEADING' 'PREVIEW LIVE' 'PREVIEW CODE';
-  /* margin: 2rem 0; */
-  height: 500px;
-}
-
 .projects a {
   color: black;
-}
-
-.project-container h3 {
-  grid-area: HEADING;
-  color: black;
-  border-bottom: 1px solid black;
-  margin-bottom: 0.5rem;
 }
 
 .preview {
@@ -113,23 +87,24 @@ h1, h2 {
   align-items: center;
 }
 
-.fade-in {
-  transform: translateX(50vw);
+.project-container {
   display: grid;
   grid-template-columns: 50vw 10vw;
-  grid-template-rows: 2rem auto;
+  grid-template-rows: auto;
   grid-template-areas: 'HEADING HEADING' 'PREVIEW LIVE' 'PREVIEW CODE';
-  margin: 2rem 0;
-  opacity: 0;
-  transition: transform 450ms ease-in, opacity 250ms ease-in;
+  margin: 3rem 0;
 }
 
-.fade-in:last-child {
+.project-container:last-child {
   margin-bottom: 4rem;
 }
 
-.fade-in h3 {
-  color: black;
+.fader {
+  transform: translateX(50vw);
+  opacity: 0;
+  transition: 
+  transform 650ms ease-out, 
+  opacity 750ms ease-out;
 }
 
 .prv {
@@ -149,13 +124,25 @@ h1, h2 {
   opacity: 1;
 }
 
+.text-center {
+  display: flex;
+  justify-content: center;
+}
+.text-center h4 {
+  color: black;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1000px) {
   .header {
     position: fixed;
     top: 0;
     width: 100vw;
-    height: 7rem;
-    background-image: linear-gradient(to bottom, white, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.1) 90%);
+    height: 9rem;
+    color: var(--font-color);
+    background-image: linear-gradient(to bottom, white, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.1) 90%, rgba(255,255,255,0) 100%);
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -175,6 +162,12 @@ h1, h2 {
 
   .header .links span, .header .links img {
     margin-right: 1rem;
+  }
+
+  .header .links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .menu {
@@ -222,6 +215,7 @@ h1, h2 {
     font-size: 1.5rem;
     margin: 1rem 2rem 2rem 0rem;
     text-decoration: none;
+    color: white;
   }
 
   .active {
