@@ -35,15 +35,15 @@ const ProjectContainer = () => {
 			projects.map(project => {
 				return (
 					<div className={`project-container ${project.fade && 'fader'}`}>
-					<div className='project-description'>
-						<h3>{project.title}</h3>
-						<p>{project.description}</p>
-					</div>
-					<div className='prv'>
-						<img src={project.image} alt='React Project' />
-					</div>
-					<a target='_blank' className='live' href={project.liveLink}>View Live</a>
-					<a target='_blank' className='code' href={project.codeLink}>View Code</a>
+						<div className='project-description'>
+							<h3>{project.title}</h3>
+							<p>{project.description}</p>
+						</div>
+						<div className='prv'>
+							<img src={project.image} alt='React Project' />
+						</div>
+						<a target='_blank' className='live' href={project.liveLink}>View Live</a>
+						<a target='_blank' className='code' href={project.codeLink}>View Code</a>
 					</div>
 				)
 			})

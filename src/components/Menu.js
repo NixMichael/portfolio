@@ -14,8 +14,8 @@ const Menu = () => {
 		const ht = document.documentElement
 	
 		let totalHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-					   ht.clientHeight, ht.scrollHeight, ht.offsetHeight );
-	
+					   ht.clientHeight, ht.scrollHeight, ht.offsetHeight);
+
 		document.addEventListener('scroll', (e) => {
 			document.querySelectorAll('.scroller-bar')[0].style.top = `${20 + (window.innerHeight * ((window.pageYOffset / totalHeight)))}px`
 		})

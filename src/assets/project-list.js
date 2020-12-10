@@ -1,6 +1,6 @@
 import GreenOil from '../assets/site-examples/green-oil-shop.png'
 import MACA from '../assets/site-examples/maca-home-page.png'
-import RecordKeeper from '../assets/site-examples/recordkeeper/record-keeper-01.png'
+import RecordKeeper from '../assets/site-examples/recordkeeper/record-keeper-02.png'
 
 export const projects = [
     {
