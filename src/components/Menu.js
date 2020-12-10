@@ -17,7 +17,7 @@ const Menu = () => {
 					   ht.clientHeight, ht.scrollHeight, ht.offsetHeight );
 	
 		document.addEventListener('scroll', (e) => {
-			document.querySelectorAll('.scroller-bar')[0].style.top = `${30 + (window.innerHeight * ((window.pageYOffset / totalHeight)))}px`
+			document.querySelectorAll('.scroller-bar')[0].style.top = `${20 + (window.innerHeight * ((window.pageYOffset / totalHeight)))}px`
 		})
 	  })
 
