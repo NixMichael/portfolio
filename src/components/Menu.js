@@ -22,12 +22,18 @@ const Menu = () => {
 	  })
 
 	return (
-		<div className='menu'>
-			<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
-			<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
-			<NavLink className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
-			<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
-			<div className='scroller-bar'></div>
+		<div class='menu-wrap'>
+			<input type='checkbox' className='toggler'/>
+			<div className='burger-menu'>
+				<div></div>
+			</div>
+			<div className='menu'>
+				<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
+				<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
+				<NavLink className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
+				<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
+				<div className='scroller-bar'></div>
+			</div>
 		</div>
 	)
 }

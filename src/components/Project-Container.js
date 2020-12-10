@@ -39,11 +39,13 @@ const ProjectContainer = () => {
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
 						</div>
-						<div className='prv'>
+						<div className='preview'>
 							<img src={project.image} alt='React Project' />
 						</div>
-						<a target='_blank' className='live' href={project.liveLink}>View Live</a>
-						<a target='_blank' className='code' href={project.codeLink}>View Code</a>
+						<div className='project-links'>
+							<a target='_blank' className='live' href={project.liveLink}>View Live</a>
+							<a target='_blank' className='code' href={project.codeLink}>View Code</a>
+						</div>
 					</div>
 				)
 			})
