@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700&display=swap');
 
-/* Remove browser scrollbar */
-:root {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+body::-webkit-scrollbar {
+  width: 1em;
 }
-
-:root::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--highlight-color);
+  outline: 1px solid slategrey;
 }
 
 * {
@@ -24,6 +27,7 @@ body {
   background: white;
   color: black;
   font-family: 'Sulphur Point', sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -180,9 +184,9 @@ h1, h2 {
     height: calc(100vh + 25px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 10rem;
     align-items: flex-end;
-    padding-bottom: 40vh;
     background: var(--bg-main-color);
     z-index: 2;
   }
