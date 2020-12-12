@@ -13,7 +13,7 @@
 .projects::-webkit-scrollbar {
   width: 1em;
 }
- 
+
 .projects::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
@@ -196,28 +196,54 @@ body {
   justify-content: center;
   align-items: center;
 
-  .project-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    padding: 3rem;
-    margin-bottom: 2rem;
-    background: rgba(0,0,0,0.05);
-    border-radius: 4px;
-
-    .preview img {
-      width: 100%;
+  .projects {
+    .scroll-top {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: url('https://cdn1.iconfinder.com/data/icons/media-icons-23/100/top-512.png');
+      background-size: 100%;
+      opacity: 0.7;
+      margin-bottom: 3rem;
+      cursor: pointer;
     }
-    .project-links {
+
+    .project-container {
       display: flex;
-      justify-content: space-around;
-      a {
-        width: 50%;
-        text-align: center;
-        color: black;
+      flex-direction: column;
+      padding: 0.5rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+
+      .preview img {
+        width: 100%;
+      }
+      .project-links {
+        display: flex;
+        justify-content: space-around;
+        a {
+          width: 50%;
+          text-align: center;
+          color: black;
+        }
       }
     }
   }
+}
+
+.fader {
+  transform: translateX(50vw);
+  opacity: 0;
+  transition: 
+  transform 650ms ease-out, 
+  opacity 750ms ease-out;
+}
+
+.appear {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 @media screen and (min-width: 600px) {

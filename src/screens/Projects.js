@@ -1,5 +1,6 @@
 import React from 'react'
 import ProjectContainer from '../components/Project-Container'
+import scrollTopImage from '../assets/github-logo.png'
 
 const Projects = () => {
 
@@ -10,9 +11,9 @@ const Projects = () => {
     return (
       <div className='projects'>
 				<ProjectContainer />
-        <div className='text-center'>
-          <h4 onClick={scrollTop}>Back to the top</h4>
-        </div>
+        {/* <div className='scroll-top'> */}
+          <div className='scroll-top' onClick={scrollTop}></div>
+        {/* </div> */}
       </div>
     )
 }
