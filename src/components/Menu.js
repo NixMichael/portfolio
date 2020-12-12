@@ -7,8 +7,6 @@ const Menu = () => {
 		window.addEventListener('resize', () => {
 		  window.location.reload()
 		})
-
-		console.log(document.querySelectorAll('.scroller-bar')[0].style.top)
 	
 		const body = document.body
 		const ht = document.documentElement
@@ -22,17 +20,20 @@ const Menu = () => {
 	  })
 
 	return (
-		<div class='menu-wrap'>
+		<div className='menu-wrap'>
+			<div className='faded-header'></div>
 			<input type='checkbox' className='toggler'/>
 			<div className='burger-menu'>
 				<div></div>
 			</div>
 			<div className='menu'>
-				<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
-				<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
-				<NavLink className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
-				<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
-				<div className='scroller-bar'></div>
+				<div className='menu-items'>
+					<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
+					<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
+					<NavLink className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
+					<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
+					<div className='scroller-bar'></div>
+				</div>
 			</div>
 		</div>
 	)

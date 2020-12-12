@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import GreenOil from '../assets/site-examples/green-oil-shop.png'
-import MACA from '../assets/site-examples/maca-home-page.png'
-import RecordKeeper from '../assets/site-examples/recordkeeper/record-keeper-01.png'
 import { projects } from '../assets/project-list'
 
 const ProjectContainer = () => {
@@ -34,7 +31,7 @@ const ProjectContainer = () => {
 		{
 			projects.map(project => {
 				return (
-					<div className={`project-container ${project.fade && 'fader'}`}>
+					<div key={project.title} className={`project-container ${project.fade && 'fader'}`}>
 						<div className='project-description'>
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
@@ -43,8 +40,8 @@ const ProjectContainer = () => {
 							<img src={project.image} alt='React Project' />
 						</div>
 						<div className='project-links'>
-							<a target='_blank' className='live' href={project.liveLink}>View Live</a>
-							<a target='_blank' className='code' href={project.codeLink}>View Code</a>
+							<a target='_blank' rel="noreferrer noopener" className='live' href={project.liveLink}>View Live</a>
+							<a target='_blank' rel="noreferrer noopener" className='code' href={project.codeLink}>View Code</a>
 						</div>
 					</div>
 				)
