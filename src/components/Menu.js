@@ -19,6 +19,10 @@ const Menu = () => {
 		})
 	  })
 
+	  const closeMenu = () => {
+		  document.getElementsByClassName('toggler')[0].checked = false
+	  }
+
 	return (
 		<div className='menu-wrap'>
 			<div className='faded-header'></div>
@@ -28,10 +32,10 @@ const Menu = () => {
 			</div>
 			<div className='menu'>
 				<div className='menu-items'>
-					<NavLink className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
-					<NavLink className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
-					<NavLink className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
-					<NavLink className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
+					<NavLink onClick={closeMenu} className='menu-item' activeClassName='active' to='/' exact>HOME</NavLink>
+					<NavLink onClick={closeMenu} className='menu-item' activeClassName='active' to='/projects'>PROJECTS</NavLink>
+					<NavLink onClick={closeMenu} className='menu-item' activeClassName='active' to='/experience'>CV</NavLink>
+					<NavLink onClick={closeMenu} className='menu-item' activeClassName='active' to='/contact'>CONTACT</NavLink>
 					<div className='scroller-bar'></div>
 				</div>
 			</div>
