@@ -24,14 +24,17 @@ const ProjectContainer = () => {
 		faders.forEach(fader => {
 			appearOnScroll.observe(fader)
 		})
-	})
+	}, [])
 	
 	return (
 		<div>
 		{
 			projects.map(project => {
 				return (
-					<div key={project.title} className={`project-container ${project.fade && 'fader'}`}>
+					<div key={project.title} className=
+					// 'project-container'
+					{`project-container ${project.fade && 'fader'}`}
+					>
 						<div className='project-description'>
 							<h3>{project.title}</h3>
 							<p>{project.description}</p>
